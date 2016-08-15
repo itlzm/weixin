@@ -1,0 +1,161 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 22536 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=1676, tid=7848
+#
+# JRE version:  (8.0_77-b03) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.77-b03 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000054d13800):  JavaThread "Reference Handler" daemon [_thread_in_vm, id=7848, stack(0x0000000055e80000,0x0000000055f80000)]
+
+Stack: [0x0000000055e80000,0x0000000055f80000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Object.wait(J)V+0
+j  java.lang.Object.wait()V+2
+j  java.lang.ref.Reference.tryHandlePending(Z)Z+54
+j  java.lang.ref.Reference$ReferenceHandler.run()V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000054d17000 JavaThread "Finalizer" daemon [_thread_new, id=7664, stack(0x0000000000000000,0x0000000000000000)]
+=>0x0000000054d13800 JavaThread "Reference Handler" daemon [_thread_in_vm, id=7848, stack(0x0000000055e80000,0x0000000055f80000)]
+  0x00000000021ee800 JavaThread "main" [_thread_in_native, id=1312, stack(0x00000000024f0000,0x00000000025f0000)]
+
+Other Threads:
+  0x0000000054d0c800 VMThread [stack: 0x0000000055b90000,0x0000000055c90000] [id=6516]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18432K, used 317K [0x00000000eb600000, 0x00000000eca80000, 0x0000000100000000)
+  eden space 15872K, 2% used [0x00000000eb600000,0x00000000eb64f5d0,0x00000000ec580000)
+  from space 2560K, 0% used [0x00000000ec800000,0x00000000ec800000,0x00000000eca80000)
+  to   space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+ ParOldGen       total 42496K, used 0K [0x00000000c2200000, 0x00000000c4b80000, 0x00000000eb600000)
+  object space 42496K, 0% used [0x00000000c2200000,0x00000000c2200000,0x00000000c4b80000)
+ Metaspace       used 1065K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 116K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000119b0000,0x0000000011ba0000] byte_map_base: 0x000000001139f000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000061df0600
+ Begin Bits: [0x00000000122a0000, 0x0000000013218000)
+ End Bits:   [0x0000000013218000, 0x0000000014190000)
+
+Polling page: 0x0000000000200000
+
+CodeCache: size=245760Kb used=403Kb max_used=403Kb free=245357Kb
+ bounds [0x00000000025f0000, 0x0000000002860000, 0x00000000115f0000]
+ total_blobs=102 nmethods=0 adapters=77
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.077 Thread 0x00000000021ee800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eb607cc0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u77\6540\hotspot\sr3a|®³?
+Event: 0.077 Thread 0x00000000021ee800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eb607fa8) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u77\6540\hotspot\src\share\vm\prims\j
+
+Events (10 events):
+Event: 0.078 loading class java/util/HashMap$Node done
+Event: 0.079 loading class sun/misc/VM
+Event: 0.079 loading class sun/misc/VM done
+Event: 0.080 loading class java/util/Hashtable$Entry
+Event: 0.080 loading class java/util/Hashtable$Entry done
+Event: 0.080 loading class java/lang/Math
+Event: 0.080 loading class java/lang/Math done
+Event: 0.081 loading class java/lang/ref/Finalizer$FinalizerThread
+Event: 0.081 loading class java/lang/ref/Finalizer$FinalizerThread done
+Event: 0.081 Thread 0x0000000054d17000 Thread added: 0x0000000054d17000
+
+
+Dynamic libraries:
+0x000000013f160000 - 0x000000013f197000 	D:\Java\jre1.8.0_77\bin\javaw.exe
+0x00000000779a0000 - 0x0000000077b49000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077880000 - 0x000000007799f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd9e0000 - 0x000007fefda4b000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefe440000 - 0x000007fefe51b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feffc10000 - 0x000007feffcaf000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe020000 - 0x000007fefe03f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefe6d0000 - 0x000007fefe7fd000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077780000 - 0x000000007787a000 	C:\Windows\system32\USER32.dll
+0x000007feffba0000 - 0x000007feffc07000 	C:\Windows\system32\GDI32.dll
+0x000007fefe430000 - 0x000007fefe43e000 	C:\Windows\system32\LPK.dll
+0x000007fefe980000 - 0x000007fefea49000 	C:\Windows\system32\USP10.dll
+0x000007fefc370000 - 0x000007fefc564000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefe580000 - 0x000007fefe5f1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feff990000 - 0x000007feff9be000 	C:\Windows\system32\IMM32.DLL
+0x000007fefea50000 - 0x000007fefeb59000 	C:\Windows\system32\MSCTF.dll
+0x000000006a360000 - 0x000000006a432000 	D:\Java\jre1.8.0_77\bin\msvcr100.dll
+0x00000000615e0000 - 0x0000000061e70000 	D:\Java\jre1.8.0_77\bin\server\jvm.dll
+0x000007fefb810000 - 0x000007fefb819000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe600000 - 0x000007fefe64d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe380000 - 0x000007fefe388000 	C:\Windows\system32\NSI.dll
+0x000007fefba50000 - 0x000007fefba8b000 	C:\Windows\system32\WINMM.dll
+0x000007fefca00000 - 0x000007fefca0c000 	C:\Windows\system32\VERSION.dll
+0x0000000077b70000 - 0x0000000077b77000 	C:\Windows\system32\PSAPI.DLL
+0x0000000073ed0000 - 0x0000000073edf000 	D:\Java\jre1.8.0_77\bin\verify.dll
+0x000000006edc0000 - 0x000000006ede9000 	D:\Java\jre1.8.0_77\bin\java.dll
+0x0000000071f60000 - 0x0000000071f76000 	D:\Java\jre1.8.0_77\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: com.lzm.weixin.test.WeiXinTest
+java_class_path (initial): D:\tts9\workspace\weixin\build\classes;D:\tts9\apache-tomcat-6.0.45\lib\annotations-api.jar;D:\tts9\apache-tomcat-6.0.45\lib\catalina-ant.jar;D:\tts9\apache-tomcat-6.0.45\lib\catalina-ha.jar;D:\tts9\apache-tomcat-6.0.45\lib\catalina-tribes.jar;D:\tts9\apache-tomcat-6.0.45\lib\catalina.jar;D:\tts9\apache-tomcat-6.0.45\lib\ecj-4.3.1.jar;D:\tts9\apache-tomcat-6.0.45\lib\el-api.jar;D:\tts9\apache-tomcat-6.0.45\lib\jasper-el.jar;D:\tts9\apache-tomcat-6.0.45\lib\jasper.jar;D:\tts9\apache-tomcat-6.0.45\lib\jsp-api.jar;D:\tts9\apache-tomcat-6.0.45\lib\servlet-api.jar;D:\tts9\apache-tomcat-6.0.45\lib\tomcat-coyote.jar;D:\tts9\apache-tomcat-6.0.45\lib\tomcat-dbcp.jar;D:\tts9\apache-tomcat-6.0.45\lib\tomcat-i18n-es.jar;D:\tts9\apache-tomcat-6.0.45\lib\tomcat-i18n-fr.jar;D:\tts9\apache-tomcat-6.0.45\lib\tomcat-i18n-ja.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\commons-beanutils-1.7.0.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\commons-collections-3.2.1.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\commons-lang-2.5.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\commons-logging-1.0.4.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\dom4j-1.6.1.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\ezmorph-1.0.6.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\httpclient-4.2.5.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\httpcore-4.2.4.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\json-lib-2.4-jdk15.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\lib\xstream-1.3.1.jar;D:\tts9\workspace\weixin\WebContent\WEB-INF\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\tts9\jdk1.8.0_45
+CLASSPATH=.
+PATH=D:/tts9/jdk1.8.0_45/bin/../jre/bin/client;D:/tts9/jdk1.8.0_45/bin/../jre/bin;D:/tts9/jdk1.8.0_45/bin/../jre/lib/i386;D:\tts9\jdk1.8.0_45\bin;C:\ProgramData\Oracle\Java\javapath;%JAVA_HOME\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files (x86)\UltraEdit;d:\Git\cmd;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 ;D:\tts9;
+USERNAME=lzm
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.17514)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4051508k(978496k free), swap 4049664k(5008k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.77-b03) for windows-amd64 JRE (1.8.0_77-b03), built on Mar 20 2016 22:01:33 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sat Aug 13 01:10:43 2016
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

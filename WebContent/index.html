@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>果粉之家</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #5a5a5a;
+        }
+
+        /* 轮播广告 */
+
+        .carousel {
+            height: 500px;
+            margin-bottom: 60px;
+        }
+
+        .carousel .item {
+            height: 500px;
+            background-color: #000;
+        }
+
+        .carousel .item img {
+            width: 100%;
+        }
+
+        .carousel-caption {
+            z-index: 10;
+        }
+
+        .carousel-caption p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* 简介 */
+
+        .summary {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .summary .col-md-4 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 特性 */
+
+        .feature-divider {
+            margin: 40px 0;
+        }
+
+        .feature {
+            padding: 30px 0;
+        }
+
+        .feature-heading {
+            font-size: 50px;
+            color: #2a6496;
+        }
+
+        .feature-heading .text-muted {
+            font-size: 28px;
+        }
+
+        /* 响应式布局 */
+
+        @media (max-width: 768px) {
+
+            .summary {
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+
+            .carousel {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+
+            .carousel .item {
+                height: 300px;
+            }
+
+            .carousel img {
+                min-height: 300px;
+            }
+
+            .carousel-caption p {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .feature-heading {
+                font-size: 34px;
+            }
+
+            .feature-heading .text-muted {
+                font-size: 22px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .feature-heading {
+                margin-top: 120px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">在线商店</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ad-carousel">综述</a></li>
+                <li><a href="#summary-container">简述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">所有商品 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab" data-tab="tab-chrome">MacBook</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-firefox">IPad Pro</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-safari">IPhone 6S</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-opera">IWatch</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/macbook-big.png" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>MacBook</h1>
+
+                    <p>对于 MacBook，我们给自己设定了一个几乎不可能实现的目标：在有史以来最为轻盈纤薄的 Mac 笔记本电脑上，打造全尺寸的使用体验。</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#"
+                          role="button" target="_blank">点我购买</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/ipad-big.png" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>IPad Pro</h1>
+
+                    <p>iPad Pro 不只是新一代的 iPad，更体现了在个人电脑的新时代中，我们所执着的远景。</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#" target="_blank"
+                          role="button">点我购买</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/iphone6s-big.png" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>IPhone 6S</h1>
+
+                    <p>第一代 iPhone 为全世界带来了 Multi-Touch 技术，从此改变了我们体验科技的方式。</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#" target="_blank"
+                          role="button">点我购买</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/watch-big.jpg" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>IWatch</h1>
+
+                    <p>有了它，你能够即时接收并回应你常用的通知，能够时常获得鼓励来保持健康与活力，还能够以全新的方式展现你的个人风格。</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="#" target="_blank"
+                          role="button">点我购买</a></p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="container summary">
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-4">
+            <img class="img-circle" src="images/macbook-small.png" alt="chrome">
+
+            <h2>MacBook</h2>
+
+            <p>对于 MacBook，我们给自己设定了一个几乎不可能实现的目标：在有史以来最为轻盈纤薄的 Mac 笔记本电脑上，打造全尺寸的使用体验。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/ipad-small.png" alt="firefox">
+
+            <h2>IPad Pro</h2>
+
+            <p>iPad Pro 不只是新一代的 iPad，更体现了在个人电脑的新时代中，我们所执着的远景。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/iphone6s-small.png" alt="safari">
+
+            <h2>IPhone 6S</h2>
+
+            <p>第一代 iPhone 为全世界带来了 Multi-Touch 技术，从此改变了我们体验科技的方式。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+    </div>
+
+    <!-- 特性 -->
+
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">      
+        <li class="active"><a href="#tab-chrome" role="tab" data-toggle="tab">MacBook</a></li>
+        <li><a href="#tab-firefox" role="tab" data-toggle="tab">IPad Pro</a></li>
+        <li><a href="#tab-safari" role="tab" data-toggle="tab">IPhone 6S</a></li>
+        <li><a href="#tab-opera" role="tab" data-toggle="tab">IWatch</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-chrome">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">MacBook <span
+                            class="text-muted">最为轻盈纤薄的 Mac</span></h2>
+
+                    <p class="lead">当你打开 MacBook，绚丽的 12 英寸 Retina 显示屏，再配上无边式玻璃，让一切都看起来格外光彩夺目。照片犹如跃然屏幕之上，细腻生动，纤毫毕现。超过 300 万个像素，令每个文字都显得清晰锐利。所有这些，都呈现于这块 Mac 电脑有史以来最为纤薄的 Retina 显示屏之上，并在超乎想象的简约设计中雕琢出震撼的视觉体验。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/macbook.jpg"
+                         alt="Chrome">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-firefox">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/ipad.jpg"
+                         alt="Firefox">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">IPad Pro <span class="text-muted">你的下一台电脑，现更以两种尺寸呈现。</span>
+                    </h2>
+
+                    <p class="lead">显示屏是 iPad 出色体验的关键。有了它，你才可以用 Multi-Touch 来互动，才能够享受到各种内容的惊人细节。为此，我们打造了更生动绚丽的 Retina 显示屏。12.9 英寸 iPad Pro 的屏幕分辨率是所有 iOS 设备中最高的；而新款 9.7 英寸 iPad Pro 则配备了我们更为先进的显示屏，带来出色的屏幕亮度和超低反光率。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-safari">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">IPhone 6S <span class="text-muted">强大功能集于一身</span></h2>
+
+                    <p class="lead">从你开始使用 iPhone 6s 的那一刻起，你就会感觉到它是如此不同。指尖一按，3D Touch 就能让你实现更多精彩。Live Photos 能以生动的方式，让你的回忆鲜活呈现。而所有这些，仅仅是个开始。你对 iPhone 6s 的了解越深入，你越会发觉它的创新层层面面，无处不在。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/iphone6s.png"
+                         alt="Safari">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-opera">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/watch.jpg"
+                         alt="Opera">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">IWatch <span class="text-muted">一目了然，就是你。</span>
+                    </h2>
+
+                    <p class="lead">Apple Watch 紧贴你的手腕，因此你可以及时、便捷地接收通知。每当你关心的人或关注的 app 有讯息送到，你就会收到一下轻触，接着你便能做出自己的回应，就这么简单。</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- 关于 -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>果粉之家为您提供：1.Apple周边新奇特产品，让您迅速了解到高科技东东。
+                    2.大卖场产品促销等咨询，为您省钱，省心，省时间。
+                    3.Apple产品知识大全，保修期查询等贴心服务。
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+
+        <p>&copy; 2016 果粉网 </p>
+    </footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#ad-carousel').carousel();
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href) {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId) {
+                    $('#feature-tab a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
